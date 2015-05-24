@@ -14,9 +14,6 @@ public class Calculator {
      * The available operators of the calculator.
      */
     public enum Operator {
-        CLEAR,       // C
-        CLEAR_ENTRY, // CE
-        BACKSPACE,   // ⌫
         EQUAL,       // =
         PLUS,        // +
         MINUS,       // -
@@ -26,11 +23,14 @@ public class Calculator {
         RECIPROCAL,  // 1/x
         PERCENT,     // %
         SQRT,        // √
-        MEM_CLEAR,   // MC
+        BACKSPACE,   // ⌫
+        CLEAR,       // C
+        CLEAR_ENTRY, // CE
         MEM_SET,     // MS
         MEM_PLUS,    // M+
         MEM_MINUS,   // M-
-        MEM_RECALL   // MR
+        MEM_RECALL,  // MR
+        MEM_CLEAR    // MC
     }
     
     public void appendDigit(int digit) {
