@@ -34,15 +34,13 @@ import java.util.List;
  */
 public class Subject {
     private List<Observer> mObservers = new ArrayList<>();
-            //建立arraylist
+    
     public void attach(Observer o) {
         mObservers.add(o);
     }
-       //刪除detach
     public void detach(Observer o) {
         mObservers.remove(o);
     }
-    //通知每個view跟新
     public void notifyObserver() {
         for (Observer o : mObservers){
             o.update();
