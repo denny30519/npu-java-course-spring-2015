@@ -48,7 +48,7 @@ public class AlternativeView implements Observer, Showable{
         mModel = model;
          mModel.attach(this);
     }
-    
+   
   private void invalidate() {
         mWindow.schduleRedraw(this);
         }
