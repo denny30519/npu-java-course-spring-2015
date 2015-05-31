@@ -27,9 +27,10 @@ package tw.edu.npu.mis;
 
 /**
  *
- * @author STP
+ * @author STP    
  */
 public interface Showable {
+    //查看onDraw數據
     void onDraw();
     
 }
