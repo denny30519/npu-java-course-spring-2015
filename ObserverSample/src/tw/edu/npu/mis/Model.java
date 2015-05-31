@@ -30,7 +30,7 @@ package tw.edu.npu.mis;
  *
  * @author Samael Wang <freesamael@gmail.com>
  */
-public class Model {
+public class Model extends Subject {
 
     private String mData;
 
@@ -48,8 +48,9 @@ public class Model {
      *
      * @param data A {@link String} data.
      */
-    public void setData(String data) {
+  public void setData(String data) {
         mData = data;
+        notifyObserver();
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015, Samael Wang <freesamael@gmail.com>
+ * Copyright (c) 2015, STP
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -25,47 +25,43 @@
  */
 package tw.edu.npu.mis;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * Simulate Window objects in GUI toolkits.
  *
- * @author Samael Wang <freesamael@gmail.com>
+ * @author STP
  */
-public class Window {
-
-      private Controller mController;
-    private List<Showable> mInvalidViews;
-
-    /**
-     * Start the event loop.
-     *
-     * @param c The controller.
-     * @param views The views to draw on the first loop.
-     */
-    public void startEventLoop(Controller c, List<Showable> views) {
-        mController = c;
-        mInvalidViews = new ArrayList<>(views);
-
-        // Simulate how an event loop works.
-        while (true) {
-            mController.readInput();
-            for (Showable v : mInvalidViews) {
-                v.onDraw();
-            }
-           mInvalidViews.clear();
-        }
+public class AlternativeView implements Observer, Showable{
+    private final Model mModel;
+    //private boolean mIsValid;
+    
+    private final String mName;
+    private final Window mWindow;
+    //private final Model mModel;
+    
+    /*public AlternativeView(Model model) {
+        mModel = model;
+        mModel.attach(this);
+    }*/
+    public AlternativeView(String name, Window window, Model model) {
+        mName = name;
+        mWindow = window;
+        mModel = model;
+         mModel.attach(this);
     }
-
-    /**
-     * Add a view to a queue for redraw on screen later.
-     *
-     * @param v View to redraw.
-     */
-    public void schduleRedraw(Showable s) {
-       if(!mInvalidViews.contains(s)){
-            mInvalidViews.add(s);
+    
+  private void invalidate() {
+        mWindow.schduleRedraw(this);
         }
+    
+ public void onDraw() {
+        System.out.println("AlternativeView (" + mName + "): "+ new StringBuilder(mModel.getData()).reverse());
+        //mIsValid = false;
     }
+    
+    @Override
+    public void update() {
+        invalidate();
+        //mIsValid = false;
+    }
+    
 }
