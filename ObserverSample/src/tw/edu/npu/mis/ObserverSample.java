@@ -48,4 +48,4 @@ public class ObserverSample {
        window.startEventLoop(controller, views);
     
     }
-}
+}//開始程式迴圈
