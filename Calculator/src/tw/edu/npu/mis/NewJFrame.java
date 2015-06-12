@@ -11,6 +11,11 @@ package tw.edu.npu.mis;
  */
 public class NewJFrame extends javax.swing.JFrame {
 
+    double flrstnum;
+    double secondnum;
+    double result;
+    String operation;
+
     /**
      * Creates new form NewJFrame
      */
@@ -48,6 +53,11 @@ public class NewJFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton13.setText("+");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("4");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +129,7 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setText("０");
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -134,10 +144,25 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         jButton12.setText("=");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
 
         jButton14.setText("＊");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
 
         jButton15.setText("／");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
 
         jButton16.setText("清除");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
@@ -188,7 +213,7 @@ public class NewJFrame extends javax.swing.JFrame {
                             .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(54, 54, 54))
+                .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,14 +256,19 @@ public class NewJFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//-
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
+ flrstnum = Double.parseDouble(jTextField1.getText());
+        jTextField1.setText("");
+        operation = "-";
+// TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        jTextField1.setText("1");
+        String takein;
+        takein = jTextField1.getText() + jButton2.getText();
+        jTextField1.setText(takein);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -246,59 +276,104 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-         jTextField1.setText("2");
+        String takein;
+        takein = jTextField1.getText() + jButton3.getText();
+        jTextField1.setText(takein);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-         jTextField1.setText("3");
+        String takein;
+        takein = jTextField1.getText() + jButton4.getText();
+        jTextField1.setText(takein);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-         jTextField1.setText("4");
+        String takein;
+        takein = jTextField1.getText() + jButton5.getText();
+        jTextField1.setText(takein);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-         jTextField1.setText("5");
+        String takein;
+        takein = jTextField1.getText() + jButton6.getText();
+        jTextField1.setText(takein);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-         jTextField1.setText("6");
+        String takein;
+        takein = jTextField1.getText() + jButton7.getText();
+        jTextField1.setText(takein);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-         jTextField1.setText("7");
+        String takein;
+        takein = jTextField1.getText() + jButton8.getText();
+        jTextField1.setText(takein);
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-         jTextField1.setText("8");
+        String takein;
+        takein = jTextField1.getText() + jButton9.getText();
+        jTextField1.setText(takein);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-         jTextField1.setText("9");
+        String takein;
+        takein = jTextField1.getText() + jButton10.getText();
+        jTextField1.setText(takein);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-         jTextField1.setText("0");
+        String takein;
+        takein = jTextField1.getText() + jButton1.getText();
+        jTextField1.setText(takein);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
-         jTextField1.setText("");
+        jTextField1.setText("");
     }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        flrstnum = Double.parseDouble(jTextField1.getText());
+        jTextField1.setText("");
+        operation = "+";
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton13ActionPerformed
+//=
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        switch (operation) {
+            case "+":
+                jTextField1.setText(String.valueOf(flrstnum + Double.parseDouble(jTextField1.getText())));
+                break;
+            case "-":
+                jTextField1.setText(String.valueOf(flrstnum - Double.parseDouble(jTextField1.getText())));
+                break;
+            case "*":
+                jTextField1.setText(String.valueOf(flrstnum * Double.parseDouble(jTextField1.getText())));
+                break;
+            case "/":
+                jTextField1.setText(String.valueOf(flrstnum / Double.parseDouble(jTextField1.getText())));
+                break;
+        }
+
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+ flrstnum = Double.parseDouble(jTextField1.getText());
+        jTextField1.setText("");
+        operation = "*";        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        flrstnum = Double.parseDouble(jTextField1.getText());
+        jTextField1.setText("");
+        operation = "/"; // TODO add your handling code here:
+    }//GEN-LAST:event_jButton15ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
