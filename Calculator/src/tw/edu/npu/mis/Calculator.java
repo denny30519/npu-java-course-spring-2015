@@ -8,8 +8,9 @@ package tw.edu.npu.mis;
 /**
  * The model class of the calculator application.
  */
-public class Calculator {
-    
+public class Calculator extends java.util.Observable {
+    String data = "",i;
+    int a ,b;
     /**
      * The available operators of the calculator.
      */
@@ -34,7 +35,8 @@ public class Calculator {
     }
     
     public void appendDigit(int digit) {
-        // TODO code application logic here
+        data += String.valueOf(digit);
+        getDisplay();
     }
     
     public void appendDot() {
@@ -42,12 +44,86 @@ public class Calculator {
     }
     
     public void performOperation(Operator operator) {
-        // TODO code application logic here
+       switch (operator) {
+            case PLUS:
+               a = Integer.parseInt(data);
+               data = "";
+               getDisplay();
+               i = "+";
+                break;
+            case MINUS:
+               a = Integer.parseInt(data);
+               data = "";
+               getDisplay();
+               i = "-";
+                break;
+            case TIMES:
+               a = Integer.parseInt(data);
+               data = "";
+               getDisplay();
+              i = "*";
+                break;
+            case OVER:
+                a = Integer.parseInt(data);
+               data = "";
+               getDisplay();
+               i = "/";
+             case CLEAR:
+               data = "";
+               getDisplay();
+                 break;
+            case EQUAL:
+           
+                if(i == "+")
+                {
+                    b= Integer.parseInt(data);
+                    data = String.valueOf(a+b);
+                    System.out.print(data);
+                    getDisplay();
+                    data="";
+                }
+                 if(i == "-")
+                {
+                    b = Integer.parseInt(data);
+                    data = String.valueOf(a-b);
+                    System.out.print(data);
+                    getDisplay();
+                    data="";
+                }
+                  if(i == "*")
+                {
+                    b = Integer.parseInt(data);
+                    data = String.valueOf(a*b);
+                    System.out.print(data);
+                    getDisplay();
+                    data="";
+                }
+                   if(i == "/")
+                {
+                    b = Integer.parseInt(data);
+                    data = String.valueOf(a/b);
+                    System.out.print(data);
+                    getDisplay();
+                    data="";
+                }
+                   
+                break;
+        }
     }
     
     public String getDisplay() {
-        // TODO code application logic here
+       setChanged();
+       notifyObservers(data);
         return null;
+    }
+    public void  ss (String QQQQ)
+    {
+        if(QQQQ =="+") performOperation(Operator.PLUS);
+        if(QQQQ =="-") performOperation(Operator.MINUS);
+        if(QQQQ =="＊") performOperation(Operator.TIMES);
+        if(QQQQ =="／") performOperation(Operator.OVER);
+        if(QQQQ =="C") performOperation(Operator.CLEAR);  
+        if(QQQQ =="=") performOperation(Operator.EQUAL);
     }
 
     /**
@@ -82,7 +158,10 @@ public class Calculator {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewJFrame().setVisible(true);
+                Calculator model = new Calculator();
+              NewJFrame view = new NewJFrame(model);
+              view.setVisible(true);
+              model.addObserver(view);
             }
         });
     }
