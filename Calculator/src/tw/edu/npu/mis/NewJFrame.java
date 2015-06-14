@@ -5,21 +5,21 @@
  */
 package tw.edu.npu.mis;
 
-import java.util.Observable;
-   
 /**
  *
  * @author STP
  */
-public class NewJFrame extends javax.swing.JFrame implements java.util.Observer {
-    Calculator MODEL;
-    
+public class NewJFrame extends javax.swing.JFrame {
+
+    double flrstnum;
+    double secondnum;
+    double result;
+    String operation;
 
     /**
      * Creates new form NewJFrame
      */
-    public NewJFrame( Calculator ss) {
-        MODEL = ss;
+    public NewJFrame() {
         initComponents();
     }
 
@@ -144,7 +144,6 @@ public class NewJFrame extends javax.swing.JFrame implements java.util.Observer 
         });
 
         jButton12.setText("=");
-        jButton12.setToolTipText("");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton12ActionPerformed(evt);
@@ -165,7 +164,7 @@ public class NewJFrame extends javax.swing.JFrame implements java.util.Observer 
             }
         });
 
-        jButton16.setText("C");
+        jButton16.setText("清除");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton16ActionPerformed(evt);
@@ -219,7 +218,7 @@ public class NewJFrame extends javax.swing.JFrame implements java.util.Observer 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -259,11 +258,17 @@ public class NewJFrame extends javax.swing.JFrame implements java.util.Observer 
     }// </editor-fold>//GEN-END:initComponents
 //-
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-         MODEL.ss(jButton11.getText());
+ flrstnum = Double.parseDouble(jTextField1.getText());
+        jTextField1.setText("");
+        operation = "-";
+// TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        MODEL.appendDigit(Integer.parseInt(jButton2.getText()));
+        // TODO add your handling code here:
+        String takein;
+        takein = jTextField1.getText() + jButton2.getText();
+        jTextField1.setText(takein);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -271,62 +276,99 @@ public class NewJFrame extends javax.swing.JFrame implements java.util.Observer 
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-         MODEL.appendDigit(Integer.parseInt(jButton3.getText()));
+        String takein;
+        takein = jTextField1.getText() + jButton3.getText();
+        jTextField1.setText(takein);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-    MODEL.appendDigit(Integer.parseInt(jButton4.getText()));
+        String takein;
+        takein = jTextField1.getText() + jButton4.getText();
+        jTextField1.setText(takein);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-      MODEL.appendDigit(Integer.parseInt(jButton5.getText()));
+        String takein;
+        takein = jTextField1.getText() + jButton5.getText();
+        jTextField1.setText(takein);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-    MODEL.appendDigit(Integer.parseInt(jButton6.getText()));
+        String takein;
+        takein = jTextField1.getText() + jButton6.getText();
+        jTextField1.setText(takein);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-       MODEL.appendDigit(Integer.parseInt(jButton7.getText()));
+        String takein;
+        takein = jTextField1.getText() + jButton7.getText();
+        jTextField1.setText(takein);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-    MODEL.appendDigit(Integer.parseInt(jButton8.getText()));
+        String takein;
+        takein = jTextField1.getText() + jButton8.getText();
+        jTextField1.setText(takein);
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-      MODEL.appendDigit(Integer.parseInt(jButton9.getText()));
+        String takein;
+        takein = jTextField1.getText() + jButton9.getText();
+        jTextField1.setText(takein);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-       MODEL.appendDigit(Integer.parseInt(jButton10.getText()));
-      
+        String takein;
+        takein = jTextField1.getText() + jButton10.getText();
+        jTextField1.setText(takein);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       MODEL.appendDigit(Integer.parseInt(jButton1.getText()));
+        String takein;
+        takein = jTextField1.getText() + jButton1.getText();
+        jTextField1.setText(takein);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
-      MODEL.ss(jButton16.getText());
+        jTextField1.setText("");
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-      MODEL.ss(jButton13.getText());
+        flrstnum = Double.parseDouble(jTextField1.getText());
+        jTextField1.setText("");
+        operation = "+";
+// TODO add your handling code here:
     }//GEN-LAST:event_jButton13ActionPerformed
 //=
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        MODEL.ss(jButton12.getText());
+        switch (operation) {
+            case "+":
+                jTextField1.setText(String.valueOf(flrstnum + Double.parseDouble(jTextField1.getText())));
+                break;
+            case "-":
+                jTextField1.setText(String.valueOf(flrstnum - Double.parseDouble(jTextField1.getText())));
+                break;
+            case "*":
+                jTextField1.setText(String.valueOf(flrstnum * Double.parseDouble(jTextField1.getText())));
+                break;
+            case "/":
+                jTextField1.setText(String.valueOf(flrstnum / Double.parseDouble(jTextField1.getText())));
+                break;
+        }
 
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-         MODEL.ss(jButton14.getText());
+ flrstnum = Double.parseDouble(jTextField1.getText());
+        jTextField1.setText("");
+        operation = "*";        // TODO add your handling code here:
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-         MODEL.ss(jButton15.getText());
+        flrstnum = Double.parseDouble(jTextField1.getText());
+        jTextField1.setText("");
+        operation = "/"; // TODO add your handling code here:
     }//GEN-LAST:event_jButton15ActionPerformed
 
     /**
@@ -352,9 +394,4 @@ public class NewJFrame extends javax.swing.JFrame implements java.util.Observer 
     private javax.swing.JButton jButton9;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
-
-    @Override
-    public void update(Observable o, Object arg) {
-        jTextField1.setText(arg.toString());
-    }
 }
